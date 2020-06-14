@@ -51,6 +51,7 @@ return wallet;
 
     public  boolean delete(Long id)
     {
+
         Optional<Wallet> wallet = walletRepository.findById(id);
         if(wallet.isPresent())
         {

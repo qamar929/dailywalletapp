@@ -17,17 +17,17 @@ import javax.validation.Valid;
 @CrossOrigin
 public class WalletController {
     @Autowired
-private WalletService walletService;
+    private WalletService walletService;
 
     @Autowired
     private ValidationErrorService validationService;
 
-   @GetMapping
-   public  ResponseEntity<?> getAll()
-   {
-       return  new ResponseEntity<>(walletService.getAll(),HttpStatus.OK);
+    @GetMapping
+    public  ResponseEntity<?> getAll()
+    {
+        return  new ResponseEntity<>(walletService.getAll(),HttpStatus.OK);
 
-   }
+    }
 
    @GetMapping("/{id}")
    public  ResponseEntity<?> getById(@PathVariable Long id)
