@@ -35,9 +35,9 @@ public class Wallet {
 
     private  Double currentBalance;
 
-    @OneToMany(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER,mappedBy = "wallet",orphanRemoval = true)
+    @OneToMany(cascade = { CascadeType.ALL },fetch = FetchType.LAZY,mappedBy = "wallet",orphanRemoval = false)
     @JsonIgnore
-    private List<Transaction> transactions;
+    private List<Transaction> transactions ;
     @PrePersist
 
     public  void setBalance()
